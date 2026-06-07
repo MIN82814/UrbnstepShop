@@ -1,0 +1,119 @@
+@mixin mobile {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+
+.product {
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -4px;
+        margin-right: -4px;
+    }
+
+    &-col-6 {
+        padding-left: 4px;
+        padding-right: 4px;
+        width: calc((100%/12)*6);
+    }
+
+    &-md-col {
+        @include mobile {
+            padding-left: 4px;
+            padding-right: 4px;
+            width: 100%;
+        }
+    }
+
+    &-color {
+        width: 64px;
+        text-align: center;
+        color: $neutral-600;
+    }
+}
+
+
+/*原價樣式*/
+.price-del {
+    color: $neutral-500;
+    padding-left: 8px;
+}
+
+/*尺寸*/
+.product-size-btn {
+    border: 1px solid $neutral-300;
+    font-weight: 500;
+    width: 160px;
+    font-family: "Noto Sans TC", sans-serif;
+
+    &.active,
+    &:hover {
+        border: 1px solid $neutral-900;
+    }
+}
+
+
+/*預約試穿/加入收藏按鈕*/
+.product-action {
+    display: flex;
+    gap: 8px;
+
+    .btn {
+        width: 50%;
+         display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet {
+            width: 86%;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            display: none;
+        }
+        
+    }
+
+
+    .bi {
+        padding-right: 8px;
+        
+
+        @include tablet {
+            font-size: 24px;
+            padding-right: 0;
+        }
+
+    }
+
+    .like {
+        display: none;
+
+        @include tablet {
+            width: 14%;
+            display: block;
+        }
+    }
+
+    .cart {
+        @include tablet {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+/*商品注意事項*/
+.product-info-item {
+    border-bottom: 1px solid $neutral-300;
+
+    p {
+        color: $neutral-600;
+    }
+}

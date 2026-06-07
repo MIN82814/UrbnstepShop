@@ -1,0 +1,176 @@
+@mixin mobile {
+  @media (max-width:767px) {
+    @content;
+  }
+}
+
+.nav-md-menu li {
+  width: 50%;
+  text-align: center;
+}
+
+.Primary-100-bn {
+  a {
+    background: $Primary-100;
+    color: $neutral-900;
+
+    &:hover {
+      background: $Primary-200;
+      color: $neutral-900;
+    }
+  }
+}
+
+
+.Primary-200-bn {
+  a {
+    background: $Primary-200;
+    color: $neutral-900;
+
+    &:hover {
+      background: $Primary-100;
+      color: $neutral-900;
+    }
+  }
+}
+
+
+.index-header {
+  background-image: url(/assets/images/index-header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 289px;
+  padding-bottom: 288px;
+
+  @include mobile {
+    background-image: url(/assets/images/index-header-sm.png);
+    padding-top: 155px;
+    padding-bottom: 155px;
+  }
+
+  .header-text {
+    padding-left: 200px;
+
+    @include mobile {
+      padding-left: 24px;
+    }
+  }
+}
+
+.index-hot {
+  position: relative;
+}
+
+.hot-tag {
+  position: absolute;
+  color: $Primary-400;
+  padding: 8px 12px;
+  font-weight: 500;
+  background-color: $Primary-100;
+}
+
+/*最新消息-聯名*/
+.new-carousel {
+  background-image: url(/assets/images/new-carousel.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include mobile {
+    background-image: url(/assets/images/new-carousel-sm.png);
+    overflow: hidden;
+  }
+
+  &-text {
+    position: relative;
+    padding: 100px 0;
+
+    @include mobile {
+      padding: 64px 0;
+    }
+  }
+}
+
+.star {
+  position: absolute;
+  top: 72.24px;
+  width: 48px;
+  left: calc(50% - 397px);
+
+  @include mobile {
+    top: 32px;
+    left: -20px;
+  }
+}
+
+.sparkle {
+  position: absolute;
+  bottom: 132px;
+  width: 76px;
+  right: calc(50% - 354px);
+
+  @include mobile {
+    bottom: 80px;
+    right: -30px;
+  }
+}
+
+
+/*依系列選購*/
+.sort-card {
+  padding-top: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: block;
+  position: relative;
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.101);
+    }
+
+    .text {
+      width: 90%;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+  }
+}
+
+/*圖片牆*/
+.outfit img {
+  max-width: 100%;
+  min-width: 0;
+  display: block;
+  object-fit: cover;
+
+  @include mobile {
+    width: 300px;
+    height: 300px;
+    min-width: auto;
+  }
+}
+
+.w {
+  &-66 {
+    width: 66%;
+  }
+
+  &-33 {
+    width: 33%;
+  }
+}

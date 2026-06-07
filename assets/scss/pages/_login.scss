@@ -1,0 +1,56 @@
+@mixin mobile {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+.member-bg {
+    background-image: url(/assets/images/login-bg.png);
+    border-radius: 12px;
+
+    @include mobile {
+        background-image: none;
+    }
+}
+
+.w-76 {
+    width: 76%;
+}
+
+.member-bn {
+    width: 50%;
+    text-align: center;
+    color: $neutral-600;
+
+    a {
+        color: $neutral-600;
+        border-bottom: 2px solid $neutral-300;
+
+        &:hover {
+            color: $neutral-900;
+            border-bottom: 2px solid $neutral-900;
+        }
+    }
+
+    .active {
+        color: $neutral-900;
+        border-bottom: 2px solid $neutral-900;
+    }
+}
+
+.social-bn {
+    border: 1px solid $neutral-300;
+    border-radius: 12px;
+    background-color: $neutral-0;
+
+    &:hover {
+        background-color: $neutral-100;
+
+    }
+}
+
+.w-md-100 {
+    @include mobile {
+        width: 100%;
+    }
+}

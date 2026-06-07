@@ -1,0 +1,25 @@
+@mixin mobile {
+    @media (max-width:767px) {
+        @content;
+    }
+}
+
+.check-icon {
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    background-color: $Primary-300;
+    color: $Primary-500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.favorites-btn {
+    padding: 12px 24px;
+}

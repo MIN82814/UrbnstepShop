@@ -1,0 +1,81 @@
+@mixin mobile {
+    @media (max-width:767px) {
+        @content;
+    }
+}
+
+.brand-story-header {
+    background-image: url(/assets/images/hero.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    padding: 151px 0;
+
+    @include mobile {
+        background-image: url(/assets/images/hero-sm.png);
+        background-size: 100% 100%;
+        padding: 0;
+    }
+}
+
+.quote {
+    text-align: center;
+    border-radius: 4px;
+
+    @include mobile {
+        text-align: left;
+    }
+}
+
+.story {
+    i {
+        margin-right: 6.5px;
+        width: 20px;
+        height: 20px;
+        color: $Primary-400;
+        vertical-align: bottom;
+    }
+
+    a {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        color: $Primary-400;
+        padding: 8px 0;
+
+        &:hover {
+            color: $Primary-500;
+        }
+    }
+}
+.course{
+ ol{
+     list-style: disc;
+     padding-left: 24px;
+}
+&-line {
+        border-left: 1px solid #212529;
+        margin: 0 8px;
+
+    }
+}
+
+    .main-item-line {
+        border-right: 3px solid #DEE2E6;
+        margin-right: 12px;
+    }
+
+@media (max-width:767px) {
+    .hero-opacity {
+        background-color: rgba(0, 0, 0, 0.299);
+        padding: 87px 0;
+    }
+
+    .introduction .text {
+        text-align: justify;
+    }
+
+
+
+}
