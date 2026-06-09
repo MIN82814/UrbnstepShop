@@ -1,5 +1,5 @@
 @mixin mobile {
-  @media (max-width:767px) {
+  @media (max-width: 767px) {
     @content;
   }
 }
@@ -21,7 +21,6 @@
   }
 }
 
-
 .Primary-200-bn {
   a {
     background: $Primary-200;
@@ -33,7 +32,6 @@
     }
   }
 }
-
 
 .index-header {
   background-image: url(/assets/images/index-header.png);
@@ -116,7 +114,6 @@
   }
 }
 
-
 /*依系列選購*/
 .sort-card {
   padding-top: 100%;
@@ -153,8 +150,9 @@
 
 /*圖片牆*/
 .outfit img {
-  max-width: 100%;
-  min-width: 0;
+  max-width: 100%; /* 寬度服從結構 */
+  height: auto; /* 核心：高度還原自身，不被外層 div 容器的拉伸所強迫 */
+  min-width: 0; /* 確保大圖不會撐破 Flex */
   display: block;
   object-fit: cover;
 
@@ -172,5 +170,45 @@
 
   &-33 {
     width: 33%;
+  }
+}
+
+.inspiration {
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4px;
+
+    @include mobile {
+      flex-wrap: nowrap;
+      margin: 0 -8px;
+      img {
+        min-width: 300px;
+      }
+    }
+  }
+  &-col-4 {
+    width: calc(100% / 12 * 4);
+    padding: 4px;
+    @include mobile {
+      width: unset;
+      padding: 0 8px;
+    }
+  }
+  &-col-6 {
+    width: calc(100% / 12 * 6);
+    padding: 4px;
+    @include mobile {
+      width: unset;
+      padding: 0 8px;
+    }
+  }
+  &-col-12 {
+    width: 100%;
+    padding: 4px;
+    @include mobile {
+      width: unset;
+      padding: 0 8px;
+    }
   }
 }
